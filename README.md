@@ -1,8 +1,8 @@
-Overview
+## Overview
 
 This project is an autonomous robot that avoids obstacles using an ultrasonic distance sensor and reacts to ambient light levels with a light sensor. The robot is built with an Arduino, two DC motors, a servo-mounted ultrasonic sensor, and optionally an L298N motor driver.
 
-It can:
+## It can:
 
 Move forward when the path is clear
 
@@ -10,7 +10,7 @@ Stop in low-light conditions
 
 Detect obstacles and decide whether to turn left or right based on available space
 
-Problem Statement
+## Problem Statement
 
 Robots navigating an unknown environment must avoid collisions and adapt to lighting conditions. Many beginner robots simply move forward, causing them to collide with obstacles. Additionally, in low-light conditions, certain tasks may be unsafe or undesirable.
 
@@ -22,7 +22,7 @@ Detecting obstacles using a sonar sensor
 
 Choosing the safest path using a servo to scan left and right
 
-Hardware Components
+## Hardware Components
 Arduino UNO	- 1	Microcontroller
 DC Motors	- 2	Left and Right wheels
 L298N Motor Driver - 1	Controls motor direction and speed
@@ -32,41 +32,41 @@ Light Sensor (LDR) -	1	Detects ambient light levels
 Jumper wires -	–	For connections
 Battery pack -	1	Powers motors separately from Arduino
 
-Hardware Schematic
+## Hardware Schematic
 
 <img width="1301" height="737" alt="tinkercad" src="https://github.com/user-attachments/assets/ff21eaa4-58ee-4b2c-bca0-07fa4ff57cb0" />
 
-Code Logic
+## Code Logic
 
 Light Sensor Priority
 
 If ambient light is below a threshold, the robot stops immediately.
 
-Obstacle Detection
+## Obstacle Detection
 
 The ultrasonic sensor measures the distance ahead.
 
 If distance ≤ 25 cm, the robot stops, moves slightly forward, and scans left and right with the servo.
 
-Decision Making
+## Decision Making
 
 Compare distances left and right
 
 Turn toward the side with more free space
 
-Movement
+## Movement
 
 Motors are controlled using PWM via the L298N
 
 Forward, backward, turn left, turn right, and stop are implemented as functions
 
-Servo Control
+## Servo Control
 
 The servo rotates the ultrasonic sensor to 50° (right) and 170° (left) for scanning
 
 Returns to 115° forward after each scan
 
-Features
+## Features
 
 Fully autonomous movement
 
@@ -76,7 +76,7 @@ Light-sensing safety stop
 
 Servo-based scanning for better path decision
 
-Usage
+## Usage
 
 Connect all components as described in the wiring section.
 
@@ -90,7 +90,7 @@ Observe autonomous obstacle avoidance and light-based stopping behavior.
 
 Compatible with L298N or L293D motor drivers
 
-Future Improvements
+## Future Improvements
 
 Add an LCD display to show sensor readings and robot status
 
